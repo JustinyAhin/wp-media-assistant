@@ -1,0 +1,16 @@
+.basic-infos-table {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    border-spacing: 0;
+    width: 100%;
+    clear: both;
+    margin: 0;
+    thead {
+        th {
+            border-bottom: 1px solid #e1e1e1;
+            padding: 8px 10px;
+        }
+    }
+}
+

@@ -18,7 +18,11 @@
  */
 
  // Enqueue styles
-
+ add_action( 'admin_enqueue_scripts', 'wpma_enqueue_admin_styles' );
+ function wpma_enqueue_admin_styles() {
+    wp_enqueue_style( 'wpma-admin-style', plugin_dir_url( __FILE__ ) . 'css/admin/wpmassistant-admin.css', array(), '', 'all' );
+    //wp_enqueue_style( 'boostrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
+ }
 
  // Enqueue scripts
 
@@ -56,10 +60,25 @@ function wpma_retrieve_images() {
 // The code to display the plugin admin page
 function wpma_dashboard_page() {
     ?>
-    <div class="wpma-dsh-wrap">
-        <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-        <p>This page will display a set of useful informations about the files in your media library</p>
-    </div> 
+    <div class="container">
+        <div class="wpma-dsh-head">
+            <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+            <h3>This page will display a set of useful informations about the files in your media library</h3>
+        </div>
+        <hr>
+        <div class="basic-infos">
+            <h2>Basic media library informations</h2>
+            <table class="basic-infos-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    
     <div>
         <?php 
         $medias_url_list = wpma_retrieve_images();
