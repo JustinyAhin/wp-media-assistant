@@ -9,8 +9,30 @@
   margin: 0;
 }
 
+.basic-infos-table th {
+  padding: 8px 10px;
+}
+
+.basic-infos-table tr {
+  text-align: left;
+}
+
 .basic-infos-table thead th {
   border-bottom: 1px solid #e1e1e1;
-  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.basic-infos-table tfoot th {
+  border-top: 1px solid #e1e1e1;
+  border-bottom: none;
+  font-size: 14px;
+}
+
+.basic-infos-table tbody th {
+  color: #555;
+}
+
+.basic-infos-table tbody .var-value {
+  font-weight: normal;
 }
 /*# sourceMappingURL=wpmassistant-admin.css.map */

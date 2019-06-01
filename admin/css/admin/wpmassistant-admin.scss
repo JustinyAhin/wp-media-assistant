@@ -6,10 +6,37 @@
     width: 100%;
     clear: both;
     margin: 0;
+
+    th {
+        padding: 8px 10px;
+    }
+
+    tr {
+        text-align: left;
+    }
+
     thead {
         th {
             border-bottom: 1px solid #e1e1e1;
-            padding: 8px 10px;
+            font-size: 14px;
+        }
+    }
+
+    tfoot {
+        th {
+            border-top: 1px solid #e1e1e1;
+            border-bottom: none;
+            font-size: 14px;
+        }
+    }
+
+    tbody {
+        th {
+            color: #555;
+        }
+
+        .var-value {
+            font-weight: normal;
         }
     }
 }
