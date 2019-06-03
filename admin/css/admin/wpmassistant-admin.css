@@ -1,4 +1,90 @@
-.basic-infos-table {
+body {
+  background-color: #f1f1f1 !important;
+}
+
+.wpma-dash .sec-one-title-icon {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+          box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+}
+
+.wpma-dash .bg-gradient-primary {
+  background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
+  background: linear-gradient(to right, #da8cff, #9a55ff);
+}
+
+.wpma-dash i {
+  line-height: 36px;
+}
+
+.wpma-dash .basic-info-card .card-one {
+  border-left: 0.25rem solid #01579b;
+}
+
+.wpma-dash .basic-info-card .card-two {
+  border-left: 0.25rem solid #ff6f00;
+}
+
+.wpma-dash .basic-info-card .card-three {
+  border-left: 0.25rem solid #263238;
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body {
+  padding: .4rem;
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body .bi-one .basic-info-title {
+  color: #01579b;
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body .bi-one .basic-info-icon {
+  -webkit-box-shadow: 0px 3px 8.3px 0.7px #4f83cc70;
+          box-shadow: 0px 3px 8.3px 0.7px #4f83cc70;
+  background: -webkit-gradient(linear, left top, right top, from(#4f83cc), to(#01579b));
+  background: linear-gradient(to right, #4f83cc, #01579b);
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body .bi-two .basic-info-title {
+  color: #ff6f00;
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body .bi-two .basic-info-icon {
+  -webkit-box-shadow: 0px 3px 8.3px 0.7px #ffa04070;
+          box-shadow: 0px 3px 8.3px 0.7px #ffa04070;
+  background: -webkit-gradient(linear, left top, right top, from(#ffa040), to(#ff6f00));
+  background: linear-gradient(to right, #ffa040, #ff6f00);
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body .bi-three .basic-info-title {
+  color: #263238;
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body .bi-three .basic-info-icon {
+  -webkit-box-shadow: 0px 3px 8.3px 0.7px #4f5b6270;
+          box-shadow: 0px 3px 8.3px 0.7px #4f5b6270;
+  background: -webkit-gradient(linear, left top, right top, from(#4f5b62), to(#263238));
+  background: linear-gradient(to right, #4f5b62, #263238);
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body .basic-info-title {
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+.wpma-dash .basic-info-card .basic-info .bi-body .basic-info-icon {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  font-size: 1.75rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.wpma-dash .basic-infos-table {
   background: #fff;
   border: 1px solid #e5e5e5;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
@@ -9,30 +95,30 @@
   margin: 0;
 }
 
-.basic-infos-table th {
+.wpma-dash .basic-infos-table th {
   padding: 8px 10px;
 }
 
-.basic-infos-table tr {
+.wpma-dash .basic-infos-table tr {
   text-align: left;
 }
 
-.basic-infos-table thead th {
+.wpma-dash .basic-infos-table thead th {
   border-bottom: 1px solid #e1e1e1;
   font-size: 14px;
 }
 
-.basic-infos-table tfoot th {
+.wpma-dash .basic-infos-table tfoot th {
   border-top: 1px solid #e1e1e1;
   border-bottom: none;
   font-size: 14px;
 }
 
-.basic-infos-table tbody th {
+.wpma-dash .basic-infos-table tbody th {
   color: #555;
 }
 
-.basic-infos-table tbody .var-value {
+.wpma-dash .basic-infos-table tbody .var-value {
   font-weight: normal;
 }
 /*# sourceMappingURL=wpmassistant-admin.css.map */

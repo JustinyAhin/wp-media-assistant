@@ -1,43 +1,152 @@
-.basic-infos-table {
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    box-shadow: 0 1px 1px rgba(0,0,0,.04);
-    border-spacing: 0;
-    width: 100%;
-    clear: both;
-    margin: 0;
+$light-blue: #01579b;
+$light-blue-l: #4f83cc;
+$light-blue-op: #4f83cc70;
+$amber: #ff6f00;
+$amber-l: #ffa040;
+$amber-op: #ffa04070;
+$lime: #263238;
+$lime-l: #4f5b62;
+$lime-op: #4f5b6270;
 
-    th {
-        padding: 8px 10px;
-    }
 
-    tr {
-        text-align: left;
-    }
+body {
+    background-color: #f1f1f1 !important;
+}
 
-    thead {
-        th {
-            border-bottom: 1px solid #e1e1e1;
-            font-size: 14px;
+.wpma-dash {
+    .wpma-dash-head {
+        .page-title {
+            text-align: center;
         }
     }
 
-    tfoot {
-        th {
-            border-top: 1px solid #e1e1e1;
-            border-bottom: none;
-            font-size: 14px;
+    .sec-title {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .sec-one-title-icon {
+        box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+    }
+
+    .bg-gradient-primary {
+        background: linear-gradient(to right, #da8cff, #9a55ff);
+    }
+
+    i {
+        line-height: 36px;
+    }
+
+    .basic-info-card {
+        .card-one {
+            border-left: .25rem solid $light-blue;
+        }
+
+        .card-two {
+            border-left: .25rem solid $amber;
+        }
+
+        .card-three {
+            border-left: .25rem solid $lime;
+        }
+
+        .basic-info {
+            .bi-body {
+                padding: .4rem;
+
+                .bi-one {
+                    .basic-info-title {
+                        color: $light-blue;
+                    }
+
+                    .basic-info-icon {
+                        box-shadow: 0px 3px 8.3px 0.7px $light-blue-op;
+                        background: linear-gradient(to right, $light-blue-l, $light-blue);
+                    }
+                }
+                
+                .bi-two {
+                    .basic-info-title {
+                        color: $amber;
+                    }
+
+                    .basic-info-icon {
+                        box-shadow: 0px 3px 8.3px 0.7px $amber-op;
+                        background: linear-gradient(to right, $amber-l, $amber);
+                    }
+                }
+
+                .bi-three {
+                    .basic-info-title {
+                        color: $lime;
+                    }
+
+                    .basic-info-icon {
+                        box-shadow: 0px 3px 8.3px 0.7px $lime-op;
+                        background: linear-gradient(to right, $lime-l, $lime);
+                    }
+                }
+
+                .basic-info-title {
+                    font-size: .7rem;
+                    font-weight: bold
+                }
+
+                .basic-info-icon {
+                    display: inline-block;
+                    width: 36px;
+                    height: 36px;
+                    font-size: 1.75rem;
+                    border-radius: 4px;
+                    text-align: center;
+                }
+            }
         }
     }
 
-    tbody {
+    .basic-infos-table {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        box-shadow: 0 1px 1px rgba(0,0,0,.04);
+        border-spacing: 0;
+        width: 100%;
+        clear: both;
+        margin: 0;
+
         th {
-            color: #555;
+            padding: 8px 10px;
         }
 
-        .var-value {
-            font-weight: normal;
+        tr {
+            text-align: left;
+        }
+
+        thead {
+            th {
+                border-bottom: 1px solid #e1e1e1;
+                font-size: 14px;
+            }
+        }
+
+        tfoot {
+            th {
+                border-top: 1px solid #e1e1e1;
+                border-bottom: none;
+                font-size: 14px;
+            }
+        }
+
+        tbody {
+            th {
+                color: #555;
+            }
+
+            .var-value {
+                font-weight: normal;
+            }
         }
     }
 }
-

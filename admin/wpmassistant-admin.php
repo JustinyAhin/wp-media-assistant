@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -11,116 +10,132 @@
  * @subpackage wpmassistant/admin
  */
 
-/**
- *
- * Plugin options in the dashboard menu
- *
- */
-
-// Enqueue styles
-add_action( 'admin_enqueue_scripts', 'wpma_enqueue_admin_styles' );
-function wpma_enqueue_admin_styles() {
-wp_enqueue_style( 'wpma-admin-style', plugin_dir_url( __FILE__ ) . 'css/admin/wpmassistant-admin.css', array(), '', 'all' );
-//wp_enqueue_style( 'boostrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
-}
-
-// Enqueue scripts
-
-// Global variables
-$medias_url_list = [];
-
-// Add the plugin admin main menu
-add_action( 'admin_menu', 'wpmassistant_admin_menu' );
-function wpmassistant_admin_menu() {
-    add_menu_page(
-        __( 'WP Media Assistant Dashboard', 'wpmassistant' ),
-        'WPMA',
-        'manage_options',
-        'wpma_dashboard',
-        'wpma_dashboard_page',
-        'dashicons-welcome-widgets-menus'
-    );
-}
-
-// The function that retrieve all the medias uploaded in the media library
-function wpma_retrieve_images() {
-    $query_images_args = array(
-        'post_type'      => 'attachment',
-        'post_mime_type' => 'image',
-        'post_status'    => 'inherit',
-        'posts_per_page'  => '-1',   
-    );
-    
-    $query_images = new WP_Query( $query_images_args );
-    
-    $wpma_medias_url_list = [];
-    foreach ( $query_images->posts as $image_info ) {
-        $wpma_medias_url_list [] = wp_get_attachment_url( $image_info->ID );
-    }
-    return $wpma_medias_url_list;
-}
-
-// The function that retrieve the extensions of medias uploaded in the media gallery
-function wpma_images_extensions() {
-    $medias_url_list = wpma_retrieve_images();
-    $single_image_extension = '';
-    $images_extension_list = [];
-
-    foreach ( $medias_url_list as $single_image_url ) {
-        $single_image_extension = wp_check_filetype( $single_image_url );
-        $images_extension_list[] = $single_image_extension['ext'];
-    }
-
-    return $images_extension_list;
-}
-
-// The function that count the occurence of different images extensions
-function wpma_extensions_occ() {
-    return array_count_values( wpma_images_extensions() );
-}
-
 // The function to display the plugin admin page
 function wpma_dashboard_page() {
     $medias_number = sizeof( wpma_retrieve_images() );
     $extensions_occ = wpma_extensions_occ();
     ?>
-    <div class="container">
-        <div class="wpma-dsh-head">
-            <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-            <h3><?php _e( 'This page will display a set of useful informations about the files in your media library', 'wpmassistant' ); ?></h3>
+    <div class="container wpma-dash">
+        <div class="wpma-dash-head">
+            <h2 class="page-title"><?php echo esc_html( get_admin_page_title() ); ?></h2>
         </div>
         <hr>
-        <div class="basic-infos">
-            <h2><?php _e( 'Basic media library informations', 'wpmassistant' ); ?></h2>
-            <table class="basic-infos-table">
-                <thead>
-                    <tr>
-                        <th class="table-title"><?php _e( 'Variable', 'wpmassistant' ); ?></th>
-                        <th class="table-title"><?php _e( 'Value', 'wpmassistant' ); ?></th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th class="table-title"><?php _e( 'Variable', 'wpmassistant' ); ?></th>
-                        <th class="table-title"><?php _e( 'Value', 'wpmassistant' ); ?></th>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr>
-                        <th class="var-name"><?php _e( 'Number of images in the media gallery', 'wpmassistant' ); ?></th>
-                        <th class="var-value"><?php echo $medias_number; ?></th>
-                    </tr>
-                    <?php
-                    foreach ( $extensions_occ as $extension_occ_key => $extension_occ_value ) { ?>
-                        <tr>
-                            <th class="var-name"><?php _e( 'Number of ' . strtoupper( $extension_occ_key ) . ' images', 'wpmassistant' ); ?></th>
-                            <th class="var-value"><?php echo $extension_occ_value; ?></th>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+
+        <h4 class="sec-title sec-one-title">
+            <span class="sec-one-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-crop-square">
+                </i>                 
+            </span>
+            <?php _e( 'Basics',  'wpmassistant' ); ?>
+        </h4>
+
+        <div class="row mb-5">
+            <div class="basic-info-card col-xl-3 col-md-6 mb-4">
+                <div class="card card-one basic-info shadow h-100 py-2">
+                    <div class="bi-body card-body">
+                        <div class="bi-one row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Number of images in the gallery', 'wpmassistant' ) ?></div>
+                                <div class="basic-info-value h5 mb-0"><?php echo $medias_number; ?></div>
+                            </div>
+                            <div class="col-auto">
+                                <span class="basic-info-icon text-white">
+                                    <i class="mdi mdi-numeric">
+                                    </i>                 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php foreach ( $extensions_occ as $extension_occ_key => $extension_occ_value ) { ?>
+                <div class="basic-info-card col-xl-3 col-md-6 mb-4">
+                    <div class="card card-two basic-info shadow h-100 py-2">
+                        <div class="bi-body card-body">
+                            <div class="bi-two row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Number of ' . strtoupper( $extension_occ_key ) . ' images', 'wpmassistant' ); ?></div>
+                                    <div class="basic-info-value h5 mb-0"><?php echo $extension_occ_value; ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <span class="basic-info-icon text-white">
+                                    <i class="mdi mdi-image-area"></i>              
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+            <div class="basic-info-card col-xl-3 col-md-6 mb-4">
+                <div class="card card-three basic-info shadow h-100 py-2">
+                    <div class="bi-body card-body">
+                        <div class="bi-three row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Total weight of the media gallery files', 'wpmassistant' ); ?></div>
+                                <div class="basic-info-value h5 mb-0"><?php echo size_format( array_sum( wpma_images_size() ), 1 ); ?></div>
+                            </div>
+                            <div class="col-auto">
+                                <span class="basic-info-icon text-white">
+                                    <i class="mdi mdi-weight">
+                                    </i>                 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <h4 class="sec-title sec-one-title">
+            <span class="sec-one-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-crop-square">
+                </i>                 
+            </span>
+            <?php _e( 'Basics',  'wpmassistant' ); ?>
+        </h4>
+        
+        <div class="row mb-5">
+            <div id="chart-container">Chart will render here!</div>
+        </div>
+
+        <div id="chart-container">Chart will render here!</div>
     </div>
-    
+
     <?php
-}
+        // Chart Configuration stored in Associative Array
+        $arrChartConfig = array(
+            "chart" => array(
+                "caption" => "Countries With Most Oil Reserves [2017-18]",
+                "subCaption" => "In MMbbl = One Million barrels",
+                "xAxisName" => "Country",
+                "yAxisName" => "Reserves (MMbbl)",
+                "numberSuffix" => "K",
+                "theme" => "fusion"
+            )
+        );
+        // An array of hash objects which stores data
+        $arrChartData = wpma_multidim_occ();
+        $arrLabelValueData = array();
+    
+        // Pushing labels and values
+        for($i = 0; $i < count($arrChartData); $i++) {
+            array_push($arrLabelValueData, array(
+                "label" => $arrChartData[$i][0], "value" => $arrChartData[$i][1]
+            ));
+        }
+    
+        $arrChartConfig["data"] = $arrLabelValueData;
+
+        print_r($arrChartData);
+        
+    
+        // JSON Encode the data to retrieve the string containing the JSON representation of the data in the array.
+        $jsonEncodedData = json_encode($arrChartConfig);
+    
+        // chart object
+        $Chart = new FusionCharts("pie2d", "MyFirstChart" , "700", "400", "chart-container", "json", $jsonEncodedData);
+    
+        // Render the chart
+        $Chart->render();
+} ?>
