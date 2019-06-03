@@ -17,8 +17,8 @@ function wpma_enqueue_admin_styles() {
     wp_enqueue_style( 'boostrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
     wp_enqueue_style( 'mdi-icons', 'https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.min.css' );
 
-    wp_enqueue_script( 'fusion-charts' , get_template_directory_uri() . '/fusioncharts-suite-xt/js/fusioncharts.js' );
-    wp_enqueue_script( 'fusion-charts' , get_template_directory_uri() . '/fusioncharts-suite-xt/js/fusioncharts.theme.fusion.js' );
+    wp_enqueue_script( 'fusion-charts' , 'https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js' );
+    wp_enqueue_script( 'fusion-charts' , 'https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js' );
 }
 
 // Enqueue scripts

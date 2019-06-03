@@ -35,7 +35,7 @@ if (is_admin()) {
 	require_once plugin_dir_path( __FILE__ ) . 'admin/wpmassistant-admin.php';
 	require_once plugin_dir_path( __FILE__ ) . 'admin/wpmassistant-functions.php';
 
-	require_once plugin_dir_path( __FILE__ ) . 'fusioncharts-suite-xt/integrations/php/fusioncharts-wrapper/fusioncharts.php';
+	require_once plugin_dir_path( __FILE__ ) . 'admin/fusion-charts-suite-xt/fusioncharts.php';
 }
 /**
  * Public
