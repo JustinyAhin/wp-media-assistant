@@ -2,7 +2,7 @@
 /**
  * The functions of the plugin.
  *
- * @link       http://segbedji.com
+ * @link       https://segbedji.com
  * @author     justinahinon <justiny.ahinon@gmail.com>
  * @since      1.0
  *
