@@ -76,10 +76,10 @@ function wpma_images_extensions() {
     $medias_url_list = wpma_retrieve_images();
     $single_image_extension = '';
     $images_extension_list = [];
-
+    
     foreach ( $medias_url_list as $single_image_url ) {
         $single_image_extension = wp_check_filetype( $single_image_url );
-        $images_extension_list[] = $single_image_extension['ext'];
+        $images_extension_list[] = strtoupper( $single_image_extension['ext'] );
     }
 
     return $images_extension_list;
@@ -105,4 +105,28 @@ function wpma_multidim_occ() {
     return $multidim_occ;
 }
 
-// The function that create the chart for images extensions
+/**
+ * Creating and rendering the chart based on an array and options
+ */
+function wpma_render_chart( $array_to_push, $chart_options ) {
+    $data_array = array();
+    
+    // Create an associative array with label and values derived from a data array
+    for($i = 0; $i < count($array_to_push); $i++) {
+        array_push($data_array, array(
+            "label" => $array_to_push[$i][0], "value" => $array_to_push[$i][1]
+        ));
+    }
+
+    // Create a data object within the chart configurations to assign the associative data array to it
+    $chart_options["data"] = $data_array;
+
+    // JSON Encode the data to retrieve the string containing the JSON representation of the data in the array.
+    $json_encoded_data = json_encode($chart_options);
+    
+    // chart object
+    $Chart = new FusionCharts("pie2d", "MyFirstChart" , "700", "400", "chart-container", "json", $json_encoded_data);
+
+    // Render the chart
+    $Chart->render();
+}
