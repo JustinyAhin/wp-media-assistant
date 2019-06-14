@@ -96,16 +96,39 @@ function wpma_dashboard_page() {
         </h4>
         
         <div class="row mb-5">
-            <div id="chart-container">
-                <?php
-                    $ext_chart_options = array(
-                        "chart" => array(
-                            "caption" => "Repartition of images in the media library by extension",
-                            "theme" => "fusion"
-                        )
-                    );
-                    wpma_render_chart( wpma_multidim_occ(), $ext_chart_options );
-                ?>
+            <div class="col-md-4">
+                <div id="extensions-chart">
+                    <?php
+                        $ext_chart_options = array(
+                            "chart" => array(
+                                "caption"               => "Images extensions",
+                                "captionAlignmenet"     => "left",
+                                "theme"                 => "fusion",
+                                "captionPadding"        => "30"
+                            )
+                        );
+                        $extensions_chart_data = wpma_multidim_occ( wpma_extensions_occ() );
+                        wpma_render_chart( "doughnut2d", "wpma-extensions-chart", $extensions_chart_data,
+                                            $ext_chart_options, 500, 500 );
+                    ?>
+                </div>
+
+                <div class="col-md-4">
+                <div id="sizes-chart">
+                    <?php
+                        $sizes_chart_options = array(
+                            "chart" => array(
+                                "caption"               => "Images extensions",
+                                "captionAlignmenet"     => "left",
+                                "theme"                 => "fusion",
+                                "captionPadding"        => "30"
+                            )
+                        );
+                        $sizes_chart_data =  wpma_multidim_occ( wpma_regroup_images_sizes() );
+                        wpma_render_chart( "doughnut2d", "wpma-sizes-chart", $sizes_chart_data,
+                                            $sizes_chart_options, 500, 500 );
+                    ?>
+                </div>
             </div>
         </div>
     </div>
