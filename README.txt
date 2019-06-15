@@ -23,7 +23,7 @@ Add your own language pack on GlotPress or do pull requests on [Github](https://
 == Installation ==
 
 1. Install the plugin and activate.
-2. Go to WPMA to view inform about your media gallery.
+2. Go to WPMA to view informations about your media gallery.
 
 == Screenshots ==
 
