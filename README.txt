@@ -1,10 +1,9 @@
 === Plugin Name ===
 Contributors: justinahinon
-Donate link: https://github.com/JustinyAhin
 Tags: media, gallery, image
 Requires at least: 3.0.1
-Tested up to: 5.1.1
-Stable tag: 5.1
+Tested up to: 5.2.1
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,22 +14,22 @@ Display useful informations about WordPress media library
 WordPress Media Assistant is a plugin that displays useful information about your media library as the number of images,
 the format, the upload date, etc...
 
+**Credits**
+
+*   [Justin Sègbédji Ahinon](https://segbedji.com/ "Justin Sègbédji Ahinon"), WordPress Developer and Core Contributor. @justinahinon1 on [Twitter](https://twitter.com/justinahinon1 "@justinahinon1 on Twitter") or [Github](https://github.com/JustinyAhin "@JustinyAhin on Github").
+
+Add your own language pack on GlotPress or do pull requests on [Github](https://github.com/JustinyAhin/wpmassistant "Plugin repo on Github"). Contributors will be credited here :)
+
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-
-== Frequently Asked Questions ==
-
+1. Install the plugin and activate.
+2. Go to WPMA to view inform about your media gallery.
 
 == Screenshots ==
 
+1. WPMA Dashboard
 
 == Changelog ==
 
-1.0.0
-Initial release
-
-== Upgrade Notice ==
-
-== Arbitrary section ==
+= 1.0 =
+* Initial release

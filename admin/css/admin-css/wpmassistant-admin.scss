@@ -17,13 +17,12 @@ body {
     .wpma-dash-head {
         .page-title {
             text-align: center;
+            margin-top: 1rem;
         }
     }
 
     .sec-title {
-        display: inline-block;
-        width: 36px;
-        height: 36px;
+        display: inline;
         border-radius: 4px;
         text-align: center;
     }
@@ -106,47 +105,10 @@ body {
             }
         }
     }
-
-    .basic-infos-table {
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        box-shadow: 0 1px 1px rgba(0,0,0,.04);
-        border-spacing: 0;
-        width: 100%;
-        clear: both;
-        margin: 0;
-
-        th {
-            padding: 8px 10px;
-        }
-
-        tr {
-            text-align: left;
-        }
-
-        thead {
-            th {
-                border-bottom: 1px solid #e1e1e1;
-                font-size: 14px;
-            }
-        }
-
-        tfoot {
-            th {
-                border-top: 1px solid #e1e1e1;
-                border-bottom: none;
-                font-size: 14px;
-            }
-        }
-
-        tbody {
-            th {
-                color: #555;
-            }
-
-            .var-value {
-                font-weight: normal;
-            }
+    
+    .summary-table-row {
+        .summary-card {
+            max-width: 100%;
         }
     }
 }

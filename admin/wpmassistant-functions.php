@@ -13,12 +13,12 @@
 // Enqueue styles
 add_action( 'admin_enqueue_scripts', 'wpma_enqueue_admin_styles' );
 function wpma_enqueue_admin_styles() {
-    wp_enqueue_style( 'wpma-admin-style', plugin_dir_url( __FILE__ ) . 'css/admin/wpmassistant-admin.css', array(), '', 'all' );
-    wp_enqueue_style( 'boostrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
-    wp_enqueue_style( 'mdi-icons', 'https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.min.css' );
+    wp_enqueue_style( 'wpma-admin-style', plugin_dir_url( __FILE__ ) . 'css/admin-css/wpmassistant-admin.css', array(), '', 'all' );
+    wp_enqueue_style( 'boostrap-css', plugin_dir_url( __FILE__ ) . 'css/bootstrap/css/bootstrap.css', array(), '' );
+    wp_enqueue_style( 'mdi-icons', plugin_dir_url( __FILE__ ) . 'css/material-design-icons/materialdesignicons.css', array(), '' );
 
-    wp_enqueue_script( 'fusion-charts' , 'https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js' );
-    wp_enqueue_script( 'fusion-charts-theme' , 'https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js' );
+    wp_enqueue_script( 'fusion-charts' , plugin_dir_url( __FILE__ ) . 'js/fusioncharts/fusioncharts.js', array(), '' );
+    wp_enqueue_script( 'fusion-charts-theme' , plugin_dir_url( __FILE__ ) . 'js/fusioncharts/fusioncharts.theme.fusion.js', array(), '' );
 }
 
 // Enqueue scripts
@@ -39,7 +39,7 @@ function wpmassistant_admin_menu() {
 }
 
 /**
- * The function that retrieve all the medias uploaded in the media library
+ * Retrieve all the medias uploaded in the media library
 */
 function wpma_retrieve_images() {
     $query_images_args = array(
@@ -52,13 +52,13 @@ function wpma_retrieve_images() {
     $query_images = new WP_Query( $query_images_args );
     
     foreach ( $query_images->posts as $image_info ) {
-        $wpma_medias_url_list [] = wp_get_attachment_url( $image_info->ID );
+        $wpma_medias_url_list[] = wp_get_attachment_url( $image_info->ID );
     }
     return $wpma_medias_url_list;
 }
 
 /** 
- * The function that retrieve the medias size
+ * Retrieve the medias size
 */
  function wpma_images_size() {
     $images_size_args = array(
@@ -78,7 +78,7 @@ function wpma_retrieve_images() {
 }
 
 /** 
- * The function that retrieve the extensions of medias uploaded in the media gallery
+ * Retrieve the extensions of medias uploaded in the media gallery
 */
  function wpma_images_extensions() {
     $medias_url_list = wpma_retrieve_images();
@@ -94,7 +94,7 @@ function wpma_retrieve_images() {
 }
 
 /** 
- * The function that count the occurence of different images extensions
+ * Count the occurence of different images extensions
 */
  function wpma_extensions_occ() {
     return array_count_values( wpma_images_extensions() );
@@ -142,7 +142,7 @@ function wpma_regroup_images_sizes() {
     $more_than_ten_mb = 0;
 
     foreach( $images_sizes_array as $image_size ) {
-        $image_size = wpma_convert_bytes_to_specified( $image_size, 'M', 2 );
+        $image_size = wpma_convert_bytes_to_specified( $image_size, 'M', 1 );
 
         if( $image_size <= 1 ) {
             $less_one_mb++;
@@ -157,19 +157,27 @@ function wpma_regroup_images_sizes() {
         }
     }
 
-    return $images_bysize_array = array(
+    $images_bysize_array = array(
         "Less than 1 MB"    => $less_one_mb,
         "1 to 3 MB"         => $one_to_three_mb,
         "3 to 5 MB"         => $three_to_five_mb,
         "5 to 10 MB"        => $five_to_ten_mb,
         "More than 10 mb"   => $more_than_ten_mb,
     );
+
+    foreach( $images_bysize_array as $size_number_key=>$size_number_val ) {
+        if( $size_number_val == 0 ) {
+            unset( $images_bysize_array[$size_number_key] );
+        }
+    }
+
+    return $images_bysize_array;
 }
 
 /**
- * Creating and rendering the chart based on an array and options
+ * Creating and rendering the extensions chart
  */
-function wpma_render_chart( $chart_type, $chart_name, $array_to_push, $chart_options, $chart_height, $chart_width ) {
+function wpma_render_ext_chart( $chart_type, $array_to_push, $chart_options, $chart_height, $chart_width ) {
     $data_array = array();
     
     // Create an associative array with label and values derived from a data array
@@ -185,10 +193,67 @@ function wpma_render_chart( $chart_type, $chart_name, $array_to_push, $chart_opt
     // JSON Encode the data to obtain the string containing the JSON representation of the data in the array.
     $json_encoded_data = json_encode($chart_options);
     
-    // chart object
-    $chart_ext = new FusionCharts( $chart_type, $chart_name, $chart_height, $chart_width, "extensions-chart", "json", $json_encoded_data);
+    // Chart object
+    $chart_ext = new FusionCharts( $chart_type, "wpma-extensions-chart", $chart_height, $chart_width, "extensions-chart", "json", $json_encoded_data);
+    
+    // Render the chart
     $chart_ext->render();
+}
 
-    $chart_sizes = new FusionCharts( $chart_type, $chart_name, $chart_height, $chart_width, "sizes-chart", "json", $json_encoded_data);
+/**
+ * Creating and rendering the sizes chart
+ */
+function wpma_render_sizes_chart( $chart_type, $array_to_push, $chart_options, $chart_height, $chart_width ) {
+    $data_array = array();
+    
+    // Create an associative array with label and values derived from a data array
+    for($i = 0; $i < count($array_to_push); $i++) {
+        array_push($data_array, array(
+            "label" => $array_to_push[$i][0], "value" => $array_to_push[$i][1]
+        ));
+    }
+
+    // Create a data object within the chart configurations to assign the associative data array to it
+    $chart_options["data"] = $data_array;
+
+    // JSON Encode the data to obtain the string containing the JSON representation of the data in the array.
+    $json_encoded_data = json_encode($chart_options);
+    
+    // Chart object
+    $chart_sizes = new FusionCharts( $chart_type, "wpma-sizes-chart", $chart_height, $chart_width, "sizes-chart", "json", $json_encoded_data);
+    
+    // Render the chart
     $chart_sizes->render();
+}
+
+/**
+ * Build an array of images names, sizes, and uploaded data
+ */
+function wpma_isd_array() {
+    $url_list = wpma_retrieve_images();
+    $sizes_list = wpma_images_size();
+    $readable_sizes_list = array();
+    $names_list = array();
+    $dates_list = array();
+    $isd_array = array();
+
+    foreach( $url_list as $single_image_url ) {
+        $single_image_id = attachment_url_to_postid( $single_image_url );
+        $single_image_date = get_post_time( get_option( 'date_format' ), true, $single_image_id );
+
+        $names_list[] = get_the_title( $single_image_id );
+        $dates_list[] = $single_image_date;
+    }
+
+    foreach( $sizes_list as $single_image_size ) {
+        $readable_sizes_list[] = size_format( $single_image_size, 0 );
+    }
+
+    for( $row = 0; $row < sizeof( $url_list ); $row++ ) {
+        $isd_array[$row][0] = $names_list[$row];
+        $isd_array[$row][1] = $readable_sizes_list[$row];
+        $isd_array[$row][2] = $dates_list[$row];
+    }
+
+    return $isd_array;
 }

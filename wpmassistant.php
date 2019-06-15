@@ -2,15 +2,15 @@
 
 /**
  * @link              https://segebdji.com
- * @since             1.0.0
+ * @since             1.0
  * @package           WP Media Assistant
  *
  * @wordpress-plugin
  * Plugin Name:       WP Media Assistant
- * Plugin URI:        https://segbedji.com
+ * Plugin URI:        https://github.com/JustinyAhin/wpmassistant
  * Description:       Display useful informations about WordPress media library.
- * Version:           1.0.0
- * Author:            Justin Ahinon
+ * Version:           1.0
+ * Author:            Justin Sègbédji Ahinon
  * Author URI:        http://segbedji.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

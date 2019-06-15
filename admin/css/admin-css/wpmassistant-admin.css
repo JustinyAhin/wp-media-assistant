@@ -2,12 +2,18 @@ body {
   background-color: #f1f1f1 !important;
 }
 
-.wpma-dash .sec-one-title-icon {
-  display: inline-block;
-  width: 36px;
-  height: 36px;
+.wpma-dash .wpma-dash-head .page-title {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.wpma-dash .sec-title {
+  display: inline;
   border-radius: 4px;
   text-align: center;
+}
+
+.wpma-dash .sec-one-title-icon {
   -webkit-box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
           box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
 }
@@ -84,41 +90,7 @@ body {
   text-align: center;
 }
 
-.wpma-dash .basic-infos-table {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
-  border-spacing: 0;
-  width: 100%;
-  clear: both;
-  margin: 0;
-}
-
-.wpma-dash .basic-infos-table th {
-  padding: 8px 10px;
-}
-
-.wpma-dash .basic-infos-table tr {
-  text-align: left;
-}
-
-.wpma-dash .basic-infos-table thead th {
-  border-bottom: 1px solid #e1e1e1;
-  font-size: 14px;
-}
-
-.wpma-dash .basic-infos-table tfoot th {
-  border-top: 1px solid #e1e1e1;
-  border-bottom: none;
-  font-size: 14px;
-}
-
-.wpma-dash .basic-infos-table tbody th {
-  color: #555;
-}
-
-.wpma-dash .basic-infos-table tbody .var-value {
-  font-weight: normal;
+.wpma-dash .summary-table-row .summary-card {
+  max-width: 100%;
 }
 /*# sourceMappingURL=wpmassistant-admin.css.map */

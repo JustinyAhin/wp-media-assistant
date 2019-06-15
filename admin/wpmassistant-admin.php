@@ -87,7 +87,7 @@ function wpma_dashboard_page() {
             </div>
         </div>
 
-        <h4 class="sec-title sec-one-title">
+        <h4 class="sec-title sec-one-title mb-4">
             <span class="sec-one-title-icon bg-gradient-primary text-white mr-2">
                 <i class="mdi mdi-crop-square">
                 </i>                 
@@ -95,8 +95,8 @@ function wpma_dashboard_page() {
             <?php _e( 'Advanced',  'wpmassistant' ); ?>
         </h4>
         
-        <div class="row mb-5">
-            <div class="col-md-4">
+        <div class="row mb-5 mt-4">
+            <div class="col-md-5">
                 <div id="extensions-chart">
                     <?php
                         $ext_chart_options = array(
@@ -108,30 +108,78 @@ function wpma_dashboard_page() {
                             )
                         );
                         $extensions_chart_data = wpma_multidim_occ( wpma_extensions_occ() );
-                        wpma_render_chart( "doughnut2d", "wpma-extensions-chart", $extensions_chart_data,
-                                            $ext_chart_options, 500, 500 );
+                        wpma_render_ext_chart( "doughnut2d", $extensions_chart_data,
+                                            $ext_chart_options, "100%", "400" );
                     ?>
                 </div>
+            </div>
 
-                <div class="col-md-4">
+            <div class="col-md-7">
                 <div id="sizes-chart">
                     <?php
                         $sizes_chart_options = array(
                             "chart" => array(
-                                "caption"               => "Images extensions",
-                                "captionAlignmenet"     => "left",
-                                "theme"                 => "fusion",
-                                "captionPadding"        => "30"
+                                "caption"                   => "Images sizes",
+                                "captionAlignmenet"         => "left",
+                                "theme"                     => "fusion",
+                                "captionPadding"            => "30",
+                                "showZeroPlaneValue"        => "0"
                             )
                         );
                         $sizes_chart_data =  wpma_multidim_occ( wpma_regroup_images_sizes() );
-                        wpma_render_chart( "doughnut2d", "wpma-sizes-chart", $sizes_chart_data,
-                                            $sizes_chart_options, 500, 500 );
+                        wpma_render_sizes_chart( "doughnut2d", $sizes_chart_data,
+                                            $sizes_chart_options, "100%", "400" );
                     ?>
+                </div>
+            </div>
+        </div>
+        
+        <?php $summary_table = wpma_isd_array(); ?>
+        <h4 class="sec-title sec-one-title mb-4">
+            <span class="sec-one-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-crop-square">
+                </i>                 
+            </span>
+            <?php _e( 'Summary',  'wpmassistant' ); ?>
+        </h4>
+        <div class="row summary-table-row">
+            <div class="col-12">
+                <div class="card summary-card" style="max-width:100%;">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th><?php _e( 'Image title', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Image weight', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Image uploaded date', 'wpmassistant' ); ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach( $summary_table as $summaty_row ) {
+                                        echo '<tr>';
+                                        foreach ( $summaty_row as $summary_element ) {
+                                            echo '<td>' . $summary_element . '</td>';
+                                        }
+                                        echo '</tr>';
+                                    }
+                                    ?>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th><?php _e( 'Image title', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Image weight', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Image uploaded date', 'wpmassistant' ); ?></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <?php
-} ?>
+}
