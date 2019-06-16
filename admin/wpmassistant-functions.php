@@ -235,14 +235,23 @@ function wpma_isd_array() {
     $readable_sizes_list = array();
     $names_list = array();
     $dates_list = array();
+    $modified_dates_list = array();
     $isd_array = array();
 
     foreach( $url_list as $single_image_url ) {
         $single_image_id = attachment_url_to_postid( $single_image_url );
-        $single_image_date = get_post_time( get_option( 'date_format' ), true, $single_image_id );
+
+        $time_format = get_post_time( get_option( 'time_format' ), true, $single_image_id );
+        $date_format = get_post_time( get_option( 'date_format' ), true, $single_image_id );
+        $single_image_date = $date_format . ' at ' . $time_format;
+
+        $modified_time_format = get_post_modified_time( get_option( 'time_format' ), true, $single_image_id );
+        $modified_date_format = get_post_modified_time( get_option( 'date_format' ), true, $single_image_id );
+        $modified_single_image_date = $modified_date_format . ' at ' . $modified_time_format;
 
         $names_list[] = get_the_title( $single_image_id );
         $dates_list[] = $single_image_date;
+        $modified_dates_list[] = $modified_single_image_date;
     }
 
     foreach( $sizes_list as $single_image_size ) {
@@ -253,6 +262,7 @@ function wpma_isd_array() {
         $isd_array[$row][0] = $names_list[$row];
         $isd_array[$row][1] = $readable_sizes_list[$row];
         $isd_array[$row][2] = $dates_list[$row];
+        $isd_array[$row][3] = $modified_dates_list[$row];
     }
 
     return $isd_array;
