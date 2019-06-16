@@ -97,7 +97,7 @@ function wpma_dashboard_page() {
         
         <div class="row mb-5 mt-4">
             <div class="col-md-5">
-                <div id="extensions-chart">
+                <div id="extensions-chart" class="shadow">
                     <?php
                         $ext_chart_options = array(
                             "chart" => array(
@@ -115,7 +115,7 @@ function wpma_dashboard_page() {
             </div>
 
             <div class="col-md-7">
-                <div id="sizes-chart">
+                <div id="sizes-chart" class="shadow">
                     <?php
                         $sizes_chart_options = array(
                             "chart" => array(
@@ -140,7 +140,7 @@ function wpma_dashboard_page() {
                 <i class="mdi mdi-crop-square">
                 </i>                 
             </span>
-            <?php _e( 'Summary',  'wpmassistant' ); ?>
+            <?php _e( 'Recents images',  'wpmassistant' ); ?>
         </h4>
         <div class="row summary-table-row">
             <div class="col-12">
@@ -150,19 +150,25 @@ function wpma_dashboard_page() {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th><?php _e( 'Image title', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Image weight', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Image uploaded date', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Title', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Weight', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Upload date', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Last updated', 'wpmassistant' ); ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach( $summary_table as $summaty_row ) {
-                                        echo '<tr>';
-                                        foreach ( $summaty_row as $summary_element ) {
-                                            echo '<td>' . $summary_element . '</td>';
+                                    $counter = 0;
+                                    foreach( $summary_table as $summary_row ) {
+                                        // Display only last ten uploaded images in the gallery
+                                        if( $counter < 10 ){
+                                            echo '<tr>';
+                                            foreach ( $summary_row as $summary_element ) {
+                                                echo '<td>' . $summary_element . '</td>';
+                                            }
+                                            echo '</tr>';
                                         }
-                                        echo '</tr>';
+                                        $counter++;
                                     }
                                     ?>
                                 </tbody>
@@ -171,6 +177,7 @@ function wpma_dashboard_page() {
                                         <th><?php _e( 'Image title', 'wpmassistant' ); ?></th>
                                         <th><?php _e( 'Image weight', 'wpmassistant' ); ?></th>
                                         <th><?php _e( 'Image uploaded date', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Last updated', 'wpmassistant' ); ?></th>
                                     </tr>
                                 </tfoot>
                             </table>
