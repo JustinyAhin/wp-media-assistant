@@ -1,7 +1,7 @@
 === WP Media Assistant ===
 Contributors: justinahinon
 Tags: media, gallery, image
-Requires at least: 3.0
+Requires at least: 4.0.0
 Tested up to: 5.2
 Requires PHP: 5.2
 Stable tag: trunk
