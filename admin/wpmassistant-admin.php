@@ -96,7 +96,7 @@ function wpma_dashboard_page() {
         </h4>
         
         <div class="row mb-5 mt-4">
-            <div class="col-md-5">
+            <div class="col-md-5 chart-wrapper">
                 <div id="extensions-chart" class="shadow">
                     <?php
                         $ext_chart_options = array(
@@ -114,7 +114,7 @@ function wpma_dashboard_page() {
                 </div>
             </div>
 
-            <div class="col-md-7">
+            <div class="col-md-7 chart-wrapper">
                 <div id="sizes-chart" class="shadow">
                     <?php
                         $sizes_chart_options = array(
@@ -174,9 +174,9 @@ function wpma_dashboard_page() {
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th><?php _e( 'Image title', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Image weight', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Image uploaded date', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Title', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Weight', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Upload date', 'wpmassistant' ); ?></th>
                                         <th><?php _e( 'Last updated', 'wpmassistant' ); ?></th>
                                     </tr>
                                 </tfoot>
