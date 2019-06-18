@@ -26,7 +26,10 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * i18n
  */
-load_plugin_textdomain( 'wpmassistant', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+function load_wpma_textdomain() {
+	load_plugin_textdomain( 'wpmassistant', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+}
+add_action( 'plugin_loaded', 'load_wpma_textdomain' );
 
 /**
  * Admin
