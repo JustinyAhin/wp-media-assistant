@@ -16,7 +16,7 @@
 add_action( 'admin_menu', 'wpmassistant_admin_menu' );
 function wpmassistant_admin_menu() {
     add_menu_page(
-        __( 'WP Media Assistant Dashboard', 'wpmassistant' ),
+        __( 'WP Media Assistant Dashboard', 'wp-media-assistant' ),
         'WPMA',
         'manage_options',
         'wpma_dashboard',

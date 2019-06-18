@@ -26,7 +26,7 @@ function wpma_dashboard_page() {
                 <i class="mdi mdi-crop-square">
                 </i>                 
             </span>
-            <?php _e( 'Basics',  'wpmassistant' ); ?>
+            <?php _e( 'Basics',  'wp-media-assistant' ); ?>
         </h4>
 
         <div class="row mb-5">
@@ -35,7 +35,7 @@ function wpma_dashboard_page() {
                     <div class="bi-body card-body">
                         <div class="bi-one row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Number of images in the gallery', 'wpmassistant' ) ?></div>
+                                <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Number of images in the gallery', 'wp-media-assistant' ) ?></div>
                                 <div class="basic-info-value h5 mb-0"><?php echo $medias_number; ?></div>
                             </div>
                             <div class="col-auto">
@@ -54,7 +54,7 @@ function wpma_dashboard_page() {
                         <div class="bi-body card-body">
                             <div class="bi-two row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Number of ' . $extension_occ_key . ' images', 'wpmassistant' ); ?></div>
+                                    <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Number of ' . $extension_occ_key . ' images', 'wp-media-assistant' ); ?></div>
                                     <div class="basic-info-value h5 mb-0"><?php echo $extension_occ_value; ?></div>
                                 </div>
                                 <div class="col-auto">
@@ -72,7 +72,7 @@ function wpma_dashboard_page() {
                     <div class="bi-body card-body">
                         <div class="bi-three row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Total weight of the media gallery files', 'wpmassistant' ); ?></div>
+                                <div class="basic-info-title text-uppercase mb-1"><?php _e( 'Total weight of the media gallery files', 'wp-media-assistant' ); ?></div>
                                 <div class="basic-info-value h5 mb-0"><?php echo size_format( array_sum( wpma_images_size() ), 1 ); ?></div>
                             </div>
                             <div class="col-auto">
@@ -92,7 +92,7 @@ function wpma_dashboard_page() {
                 <i class="mdi mdi-crop-square">
                 </i>                 
             </span>
-            <?php _e( 'Advanced',  'wpmassistant' ); ?>
+            <?php _e( 'Advanced',  'wp-media-assistant' ); ?>
         </h4>
         
         <div class="row mb-5 mt-4">
@@ -140,7 +140,7 @@ function wpma_dashboard_page() {
                 <i class="mdi mdi-crop-square">
                 </i>                 
             </span>
-            <?php _e( 'Recents images',  'wpmassistant' ); ?>
+            <?php _e( 'Recents images',  'wp-media-assistant' ); ?>
         </h4>
         <div class="row summary-table-row">
             <div class="col-12">
@@ -150,10 +150,10 @@ function wpma_dashboard_page() {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th><?php _e( 'Title', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Weight', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Upload date', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Last updated', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Title', 'wp-media-assistant' ); ?></th>
+                                        <th><?php _e( 'Weight', 'wp-media-assistant' ); ?></th>
+                                        <th><?php _e( 'Upload date', 'wp-media-assistant' ); ?></th>
+                                        <th><?php _e( 'Last updated', 'wp-media-assistant' ); ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -174,10 +174,10 @@ function wpma_dashboard_page() {
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th><?php _e( 'Title', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Weight', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Upload date', 'wpmassistant' ); ?></th>
-                                        <th><?php _e( 'Last updated', 'wpmassistant' ); ?></th>
+                                        <th><?php _e( 'Title', 'wp-media-assistant' ); ?></th>
+                                        <th><?php _e( 'Weight', 'wp-media-assistant' ); ?></th>
+                                        <th><?php _e( 'Upload date', 'wp-media-assistant' ); ?></th>
+                                        <th><?php _e( 'Last updated', 'wp-media-assistant' ); ?></th>
                                     </tr>
                                 </tfoot>
                             </table>

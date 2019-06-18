@@ -14,7 +14,7 @@
  * Author URI:        http://segbedji.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wpmassistant
+ * Text Domain:       wp-media-assistant
  * Domain Path:       /languages
  */
 
@@ -27,7 +27,7 @@ if ( ! defined( 'WPINC' ) ) {
  * i18n
  */
 function load_wpma_textdomain() {
-	load_plugin_textdomain( 'wpmassistant', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+	load_plugin_textdomain( 'wp-media-assistant', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 }
 add_action( 'plugin_loaded', 'load_wpma_textdomain' );
 

@@ -4,7 +4,7 @@ Tags: media, gallery, image
 Requires at least: 4.0.0
 Tested up to: 5.2
 Requires PHP: 5.2
-Stable tag: trunk
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,8 +25,14 @@ Add your own language pack on GlotPress or do pull requests on [Github](https://
 2. Go to WPMA to view informations about your media gallery.
 
 == Screenshots ==
-1. 1. WPMA Dashboard
+1. WPMA Dashboard
 
 == Changelog ==
+
+= 1.1 =
+* Update the plugin slug for internationalization
+* The bug in media library list mode is now fixed
+* WordPress 4.0.0 is now the version required for the plugin
+
 = 1.0 =
 * Initial release
