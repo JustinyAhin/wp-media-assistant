@@ -105,6 +105,12 @@ body {
             }
         }
     }
+
+    .chart-wrapper {
+        .raphael-group-27-creditgroup, .raphael-group-99-creditgroup {
+            display: none;
+        }
+    }
     
     .summary-table-row {
         .summary-card {

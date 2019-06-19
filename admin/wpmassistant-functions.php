@@ -10,9 +10,28 @@
  * @subpackage wpmassistant/admin
  */
 
+ /**
+ * Add the plugin menu to WordPress dashboard
+ */
+add_action( 'admin_menu', 'wpmassistant_admin_menu' );
+function wpmassistant_admin_menu() {
+    add_menu_page(
+        __( 'WP Media Assistant Dashboard', 'wp-media-assistant' ),
+        'WPMA',
+        'manage_options',
+        'wpma_dashboard',
+        'wpma_dashboard_page',
+        'dashicons-welcome-widgets-menus'
+    );
+}
+
 // Enqueue styles
 add_action( 'admin_enqueue_scripts', 'wpma_enqueue_admin_styles' );
-function wpma_enqueue_admin_styles() {
+function wpma_enqueue_admin_styles( $enqueue_hook ) {
+    if( $enqueue_hook != 'toplevel_page_wpma_dashboard' ) {
+        return;
+    }
+
     wp_enqueue_style( 'wpma-admin-style', plugin_dir_url( __FILE__ ) . 'css/admin-css/wpmassistant-admin.css', array(), '', 'all' );
     wp_enqueue_style( 'boostrap-css', plugin_dir_url( __FILE__ ) . 'css/bootstrap/css/bootstrap.css', array(), '' );
     wp_enqueue_style( 'mdi-icons', plugin_dir_url( __FILE__ ) . 'css/material-design-icons/materialdesignicons.css', array(), '' );
@@ -22,21 +41,6 @@ function wpma_enqueue_admin_styles() {
 }
 
 // Enqueue scripts
-
-/**
- * Add the plugin menu to WordPress dashboard
- */
-add_action( 'admin_menu', 'wpmassistant_admin_menu' );
-function wpmassistant_admin_menu() {
-    add_menu_page(
-        __( 'WP Media Assistant Dashboard', 'wpmassistant' ),
-        'WPMA',
-        'manage_options',
-        'wpma_dashboard',
-        'wpma_dashboard_page',
-        'dashicons-welcome-widgets-menus'
-    );
-}
 
 /**
  * Retrieve all the medias uploaded in the media library

@@ -90,6 +90,10 @@ body {
   text-align: center;
 }
 
+.wpma-dash .chart-wrapper .raphael-group-27-creditgroup, .wpma-dash .chart-wrapper .raphael-group-99-creditgroup {
+  display: none;
+}
+
 .wpma-dash .summary-table-row .summary-card {
   max-width: 100%;
 }
