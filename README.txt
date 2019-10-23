@@ -28,6 +28,11 @@ Add your own language pack on GlotPress or do pull requests on [Github](https://
 1. WPMA Dashboard
 
 == Changelog ==
+= 1.1.1 =
+* The plugin will now use Semver for versioning
+* Add edit links to the images list table
+* Remove some material design icons from the plugin option page
+* Remove some unused CSS
 
 = 1.1 =
 * Update the plugin slug for internationalization

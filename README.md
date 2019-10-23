@@ -15,6 +15,12 @@ the format, the upload date, etc...
  3. Go to WPMA menu in your dashboard to view informations about your media gallery.
 
 ###   Changelog
+= 1.1.1 =
+* The plugin will now use Semver for versioning
+* Add edit links to the images list table
+* Remove some material design icons from the plugin option page
+* Remove some unused CSS
+
 = 1.1 =
 * Update the plugin slug for internationalization
 * The bug in media library list mode is now fixed
