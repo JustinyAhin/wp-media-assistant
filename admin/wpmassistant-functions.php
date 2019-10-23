@@ -32,9 +32,9 @@ function wpma_enqueue_admin_styles( $enqueue_hook ) {
         return;
     }
 
-    wp_enqueue_style( 'wpma-admin-style', plugin_dir_url( __FILE__ ) . 'css/admin-css/wpmassistant-admin.css', array(), '', 'all' );
-    wp_enqueue_style( 'boostrap-css', plugin_dir_url( __FILE__ ) . 'css/bootstrap/css/bootstrap.css', array(), '' );
-    wp_enqueue_style( 'mdi-icons', plugin_dir_url( __FILE__ ) . 'css/material-design-icons/materialdesignicons.css', array(), '' );
+    wp_enqueue_style( 'wpma-admin-style', plugin_dir_url( __FILE__ ) . 'css/wpmassistant-admin.css', array(), '', 'all' );
+    wp_enqueue_style( 'boostrap-css', plugin_dir_url( __FILE__ ) . 'css/bootstrap.css', array(), '' );
+    wp_enqueue_style( 'mdi-icons', plugin_dir_url( __FILE__ ) . 'css/materialdesignicons.css', array(), '' );
 
     wp_enqueue_script( 'fusion-charts' , plugin_dir_url( __FILE__ ) . 'js/fusioncharts/fusioncharts.js', array(), '' );
     wp_enqueue_script( 'fusion-charts-theme' , plugin_dir_url( __FILE__ ) . 'js/fusioncharts/fusioncharts.theme.fusion.js', array(), '' );
@@ -240,6 +240,7 @@ function wpma_isd_array() {
     $names_list = array();
     $dates_list = array();
     $modified_dates_list = array();
+    $edit_links_list = array();
     $isd_array = array();
 
     foreach( $url_list as $single_image_url ) {
@@ -256,6 +257,9 @@ function wpma_isd_array() {
         $names_list[] = get_the_title( $single_image_id );
         $dates_list[] = $single_image_date;
         $modified_dates_list[] = $modified_single_image_date;
+
+        $edit_links_list[] = "<a href=\"" . "upload.php?" . "item=" . $single_image_id . 
+                            "\" target=_blank>Edit</a>";
     }
 
     foreach( $sizes_list as $single_image_size ) {
@@ -267,6 +271,7 @@ function wpma_isd_array() {
         $isd_array[$row][1] = $readable_sizes_list[$row];
         $isd_array[$row][2] = $dates_list[$row];
         $isd_array[$row][3] = $modified_dates_list[$row];
+        $isd_array[$row][4] = $edit_links_list[$row];
     }
 
     return $isd_array;

@@ -22,10 +22,6 @@ function wpma_dashboard_page() {
         <hr>
 
         <h4 class="sec-title sec-one-title">
-            <span class="sec-one-title-icon bg-gradient-primary text-white mr-2">
-                <i class="mdi mdi-crop-square">
-                </i>                 
-            </span>
             <?php _e( 'Basics',  'wp-media-assistant' ); ?>
         </h4>
 
@@ -88,10 +84,6 @@ function wpma_dashboard_page() {
         </div>
 
         <h4 class="sec-title sec-one-title mb-4">
-            <span class="sec-one-title-icon bg-gradient-primary text-white mr-2">
-                <i class="mdi mdi-crop-square">
-                </i>                 
-            </span>
             <?php _e( 'Advanced',  'wp-media-assistant' ); ?>
         </h4>
         
@@ -136,10 +128,6 @@ function wpma_dashboard_page() {
         
         <?php $summary_table = wpma_isd_array(); ?>
         <h4 class="sec-title sec-one-title mb-4">
-            <span class="sec-one-title-icon bg-gradient-primary text-white mr-2">
-                <i class="mdi mdi-crop-square">
-                </i>                 
-            </span>
             <?php _e( 'Recents images',  'wp-media-assistant' ); ?>
         </h4>
         <div class="row summary-table-row">
