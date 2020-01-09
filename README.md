@@ -15,6 +15,9 @@ the format, the upload date, etc...
  3. Go to WPMA menu in your dashboard to view informations about your media gallery.
 
 ###   Changelog
+= 1.1.2 =
+* The plugin is now deployed on WordPress repo through GitHub actions
+
 = 1.1.1 =
 * The plugin will now use Semver for versioning
 * Add edit links to the images list table
