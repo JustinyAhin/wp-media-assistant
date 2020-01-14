@@ -15,6 +15,10 @@ the format, the upload date, etc...
  3. Go to WPMA menu in your dashboard to view informations about your media gallery.
 
 ###   Changelog
+= 1.2 =
+* Minor bug fixes
+* Increase the minimum required WordPress version
+
 = 1.1.2 =
 * The plugin is now deployed on WordPress repo through GitHub actions
 

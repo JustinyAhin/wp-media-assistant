@@ -9,13 +9,12 @@
  * Plugin Name:       WP Media Assistant
  * Plugin URI:        https://github.com/JustinyAhin/wpmassistant
  * Description:       Display useful informations about WordPress media library.
- * Version:           1.1.1
+ * Version:           1.2
  * Author:            Justin Sègbédji Ahinon
- * Author URI:        http://segbedji.com
+ * Author URI:        https://segbedji.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wp-media-assistant
- * Domain Path:       /languages
  */
 
 // If this file is called directly, abort.

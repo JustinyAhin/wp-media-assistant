@@ -1,10 +1,10 @@
 === WP Media Assistant ===
 Contributors: justinahinon
 Tags: media, gallery, image
-Requires at least: 4.0.0
-Tested up to: 5.2
+Requires at least: 4.6
+Tested up to: 5.3
 Requires PHP: 5.2
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,10 @@ Add your own language pack on GlotPress or do pull requests on [Github](https://
 1. WPMA Dashboard
 
 == Changelog ==
+= 1.2 =
+* Minor bug fixes
+* Increase the minimum required WordPress version
+
 = 1.1.2 =
 * The plugin is now deployed on WordPress repo through GitHub actions
 
