@@ -28,6 +28,3 @@ the format, the upload date, etc...
 * Update the plugin slug for internationalization
 * The bug in media library list mode is now fixed
 * WordPress 4.0.0 is now the version required for the plugin
-
-= 1.0 =
-* Initial release
