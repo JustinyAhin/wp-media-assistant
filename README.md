@@ -10,7 +10,7 @@ the format, the upload date, etc...
  1. Install WP Media Assistant
 	 - By downloading it directly from WordPress plugins repo [here](https://wordpress.org/plugins/wp-media-assistant) and add it in your wp-content/plugins folder
 	 - From WordPress Dashboard by typing WP Media Assistant in Plugins>Add new
-	 - By downloading the lastest release directly from [GitHub](https://github.com/JustinyAhin/wpmassistant/releases/latest) and add it in your wp-content/plugins folder
+	 - By downloading the lastest release directly from [GitHub](https://github.com/JustinyAhin/wp-media-assistant/releases/latest) and add it in your wp-content/plugins folder
 2.  Activate the plugin
  3. Go to WPMA menu in your dashboard to view informations about your media gallery.
 

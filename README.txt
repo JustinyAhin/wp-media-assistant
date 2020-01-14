@@ -16,9 +16,9 @@ the format, the upload date, etc...
 
 **Credits**
 
-*   [Justin Sègbédji Ahinon](https://segbedji.com/ "Justin Sègbédji Ahinon"), WordPress Developer and Core Contributor. @justinahinon1 on [Twitter](https://twitter.com/justinahinon1 "@justinahinon1 on Twitter") or [Github](https://github.com/JustinyAhin "@JustinyAhin on Github").
+*   [Justin Sègbédji Ahinon](https://segbedji.com/ "Justin Sègbédji Ahinon"), WordPress Developer and Core Contributor. [Github](https://github.com/JustinyAhin "@JustinyAhin on Github").
 
-Add your own language pack on GlotPress or do pull requests on [Github](https://github.com/JustinyAhin/wpmassistant "Plugin repo on Github"). Contributors will be credited here :)
+Add your own language pack on GlotPress or do pull requests on [Github](https://github.com/JustinyAhin/wp-media-assistant "Plugin repo on Github"). Contributors will be credited here :)
 
 == Installation ==
 1. Install the plugin and activate.
