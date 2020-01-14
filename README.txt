@@ -28,6 +28,9 @@ Add your own language pack on GlotPress or do pull requests on [Github](https://
 1. WPMA Dashboard
 
 == Changelog ==
+= 1.1.2 =
+* The plugin is now deployed on WordPress repo through GitHub actions
+
 = 1.1.1 =
 * The plugin will now use Semver for versioning
 * Add edit links to the images list table
@@ -38,6 +41,3 @@ Add your own language pack on GlotPress or do pull requests on [Github](https://
 * Update the plugin slug for internationalization
 * The bug in media library list mode is now fixed
 * WordPress 4.0.0 is now the version required for the plugin
-
-= 1.0 =
-* Initial release
