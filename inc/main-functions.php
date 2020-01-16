@@ -21,7 +21,7 @@ function wpmassistant_admin_menu() {
     $options_page_suffix = add_submenu_page(
         'upload.php',
         __( 'WP Media Assistant Dashboard', 'wp-media-assistant' ),
-        'WPMA',
+        'WP Media Assistant',
         'manage_options',
         'wpma_dashboard',
         'wpma_dashboard_page'
