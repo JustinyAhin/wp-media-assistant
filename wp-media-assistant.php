@@ -34,12 +34,8 @@ add_action( 'plugin_loaded', 'load_wpma_textdomain' );
  * Admin
  */
 if (is_admin()) {
-	require_once plugin_dir_path( __FILE__ ) . 'admin/wpmassistant-admin.php';
-	require_once plugin_dir_path( __FILE__ ) . 'admin/wpmassistant-functions.php';
+	require_once plugin_dir_path( __FILE__ ) . 'inc/options-page.php';
+	require_once plugin_dir_path( __FILE__ ) . 'inc/main-functions.php';
 
-	require_once plugin_dir_path( __FILE__ ) . 'admin/fusion-charts-suite-xt/fusioncharts.php';
+	require_once plugin_dir_path( __FILE__ ) . 'lib/fusioncharts.php';
 }
-/**
- * Public
- */
-require_once plugin_dir_path( __FILE__ ) . 'public/wpmassistant-public.php';
