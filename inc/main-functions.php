@@ -16,7 +16,9 @@
 add_action( 'admin_menu', 'wpmassistant_admin_menu' );
 function wpmassistant_admin_menu() {
 
-    add_submenu_page(
+    global $options_page_suffix;
+
+    $options_page_suffix = add_submenu_page(
         'upload.php',
         __( 'WP Media Assistant Dashboard', 'wp-media-assistant' ),
         'WPMA',
@@ -29,7 +31,12 @@ function wpmassistant_admin_menu() {
 
 // Enqueue styles
 add_action( 'admin_enqueue_scripts', 'wpma_enqueue_admin_styles' );
-function wpma_enqueue_admin_styles( $enqueue_hook ) {
+function wpma_enqueue_admin_styles( $hook ) {
+
+    global $options_page_suffix;
+
+    if ( $hook != $options_page_suffix )
+        return;
 
     wp_enqueue_style( 'options-page-style', plugin_dir_url( __FILE__ ) . 'css/options-page.css', array(), '', 'all' );
     wp_enqueue_style( 'boostrap', plugin_dir_url( __DIR__ ) . 'lib/css/bootstrap.css', array(), '' );
