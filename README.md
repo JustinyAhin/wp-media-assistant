@@ -15,6 +15,10 @@ the format, the upload date, etc...
  3. Go to WPMA menu in your dashboard to view informations about your media gallery.
 
 ###   Changelog
+= 1.2.1 =
+* Minor bug fixes
+* The plugin option page is now under the Media menu
+
 = 1.2 =
 * Minor bug fixes
 * Increase the minimum required WordPress version

@@ -2,9 +2,9 @@
 Contributors: justinahinon
 Tags: media, gallery, image
 Requires at least: 4.6
-Tested up to: 5.3
+Tested up to: 5.3.2
 Requires PHP: 5.2
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,10 @@ Add your own language pack on GlotPress or do pull requests on [Github](https://
 1. WPMA Dashboard
 
 == Changelog ==
+= 1.2.1 =
+* Minor bug fixes
+* The plugin option page is now under the Media menu
+
 = 1.2 =
 * Minor bug fixes
 * Increase the minimum required WordPress version

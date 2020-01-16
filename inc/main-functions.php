@@ -11,7 +11,8 @@
  */
 
  /**
- * Add the plugin menu to WordPress dashboard
+  * Add the plugin submenu page
+  * @since 1.2.1
  */
 add_action( 'admin_menu', 'wpmassistant_admin_menu' );
 function wpmassistant_admin_menu() {
@@ -29,7 +30,10 @@ function wpmassistant_admin_menu() {
 
 }
 
-// Enqueue styles
+/**
+ * Enqueue option page styles
+ * @since 1.2.1
+ */
 add_action( 'admin_enqueue_scripts', 'wpma_enqueue_admin_styles' );
 function wpma_enqueue_admin_styles( $hook ) {
 
