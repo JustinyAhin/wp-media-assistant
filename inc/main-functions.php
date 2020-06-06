@@ -43,8 +43,6 @@ function wpma_enqueue_admin_styles( $hook ) {
         return;
 
     wp_enqueue_style( 'options-page-style', plugin_dir_url( __FILE__ ) . 'css/options-page.css', array(), '', 'all' );
-    wp_enqueue_style( 'boostrap', plugin_dir_url( __DIR__ ) . 'lib/css/bootstrap.css', array(), '' );
-    wp_enqueue_style( 'mdi-icons', plugin_dir_url( __DIR__ ) . 'lib/css/materialdesignicons.css', array(), '' );
 
     wp_enqueue_script( 'fusion-charts' , plugin_dir_url( __DIR__ ) . 'lib/js/fusioncharts.js', array(), '' );
     wp_enqueue_script( 'fusion-charts-theme' , plugin_dir_url( __DIR__ ) . 'lib/js/fusioncharts.theme.fusion.js', array(), '' );
@@ -270,7 +268,7 @@ function wpma_isd_array() {
         $modified_dates_list[] = $modified_single_image_date;
 
         $edit_links_list[] = "<a href=\"" . "upload.php?" . "item=" . $single_image_id . 
-                            "\" target=_blank>Edit</a>";
+                            "\">Edit</a>";
     }
 
     foreach( $sizes_list as $single_image_size ) {
