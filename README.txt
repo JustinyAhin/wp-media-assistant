@@ -31,4 +31,4 @@ Add your own language pack on GlotPress or do pull requests on [Github](https://
 
 
 == Changelog ==
-The changelog of the plugin is [here](https://github.com/JustinyAhin/wp-media-assistant/blob/master/CHANGELOG.md)
+The changelog of the plugin is [here](https://github.com/JustinyAhin/wp-media-assistant/blob/main/CHANGELOG.md)

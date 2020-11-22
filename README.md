@@ -15,4 +15,4 @@ the format, the upload date, etc...
  3. Go to WPMA menu in your dashboard to view informations about your media gallery.
 
 ###   Changelog
-The changelog of the plugin is [here](https://github.com/JustinyAhin/wp-media-assistant/blob/master/CHANGELOG.md)
+The changelog of the plugin is [here](https://github.com/JustinyAhin/wp-media-assistant/blob/main/CHANGELOG.md)
