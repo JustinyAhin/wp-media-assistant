@@ -1,0 +1,12 @@
+{
+  "name": "wp-media-assistant",
+  "version": "1.0.0",
+  "description": "### Display useful informations about WordPress media library.",
+
+  "scripts": {
+    "wp-env": "wp-env start"
+  },
+  "dependencies": {
+    "@wordpress/env": "4.0.5"
+  } 
+}

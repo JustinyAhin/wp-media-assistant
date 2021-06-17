@@ -1,0 +1,16 @@
+name: wp-env test
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup wp env
+        run: |
+          npm run wp-env
