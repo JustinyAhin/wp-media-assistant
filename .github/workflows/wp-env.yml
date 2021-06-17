@@ -13,7 +13,7 @@ jobs:
 
       - name: npm ci
         run: |
-          npm ci
+          npm install
 
       - name: setup wp env
         run: |
