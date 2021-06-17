@@ -11,6 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: npm ci
+        run: |
+          npm ci
+
       - name: setup wp env
         run: |
           npm run wp-env
